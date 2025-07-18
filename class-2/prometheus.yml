@@ -1,0 +1,21 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+
+  - job_name: 'vm-monitor'
+    static_configs:
+      - targets: ['10.60.75.195:9100']
+
+  - job_name: 'file-sd-nodes'
+    file_sd_configs:
+      - files:
+          - /etc/prometheus/file_sd_targets/*.json
+
+  - job_name: 'cadvisor'
+    static_configs:
+      - targets: ['cadvisor:8080']

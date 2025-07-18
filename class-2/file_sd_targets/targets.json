@@ -1,0 +1,11 @@
+[
+  {
+    "labels": {
+      "job": "node-exporter",
+      "env": "lab"
+    },
+    "targets": [
+      "10.60.75.196:9100"
+    ]
+  }
+]
